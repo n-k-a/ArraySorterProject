@@ -3,12 +3,15 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class SortController {
     private static Logger logger = Logger.getLogger("My Application Logger");
     private SortModel model;
     Scanner choice = new Scanner(System.in);
+    private enum ComparisonSize  {SINGLE, DUO};
+    private ComparisonSize comparisonSize;
 
     public SortController(SortModel model) {
         PropertyConfigurator.configure("log4j.properties");
@@ -16,8 +19,6 @@ public class SortController {
     }
 
     public void sortSelect() {
-        //boolean loop = true;
-
         System.out.println("Which sort do you want? Please type in: \n BubbleSort \n MergeSort \n QuickSort");
         Sort undefinedSort = null;
         SortFactory sortFactory = new SortFactory();
@@ -26,6 +27,8 @@ public class SortController {
         sortChoice = choice.next();
 
         while (true){
+            undefinedSort = sortFactory.createSort(sortChoice);
+
             if (undefinedSort == null) {
                 System.out.println("Please input one of the listed sorts" +
                         "in the right format please.");
@@ -44,6 +47,8 @@ public class SortController {
 
 
     }
+
+
     public void setArraySize(){
         int arrSize=0;
 
@@ -56,7 +61,26 @@ public class SortController {
 
             System.out.println("Please input a number");
         }
-        model.generateArr(arrSize);
+
+        System.out.println("Do you want to compare sorts? Please enter 'SINGLE' for one sort or 'DUO' to compare" +
+                "two different sorts");
+        comparisonSize = ComparisonSize.valueOf(choice.next().toUpperCase());
+        switch (comparisonSize) {
+            case SINGLE:
+                model.generateArr(arrSize);
+                break;
+
+            case DUO:
+                model.generateTwoArr(arrSize);
+                break;
+            default:
+                System.out.println("Nothing valid selected, using single sort");
+                model.generateArr(arrSize);
+                 comparisonSize = ComparisonSize.SINGLE;
+                break;
+        }
+
+
         System.out.println(java.util.Arrays.toString(model.getArr()) + "Unsorted Array");
 
 
@@ -65,20 +89,14 @@ public class SortController {
         model.runSort();
     }
     public void sortCompare(){
-        System.out.println("What other sort do you want to " +
-                "compare this to? Y/N?");
-        String select = choice.next();
-        while (true){
-            if (select == "Y"){
-
-            }
-            else  if(select == "N"){
-                System.out.println("Ending program");
-                break;
-
-            }
-            break;
-        }
+  if (comparisonSize == ComparisonSize.DUO){
+      model.setArr(model.getArrSecond());
+      sortSelect();
+      runModelSort();
+      System.out.println("Compared Sort is" );
+      printArr();
+      System.out.println("Time difference between first and second sort is: " +model.getComparedMethodTime());
+  }
     }
     public void printArr(){
 

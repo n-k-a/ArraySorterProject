@@ -41,7 +41,7 @@ public class SortTargetTester {
     }
 
     @Test
-    public void testArrNull() {
+    public void LargeSort() {
         int[] testArr = null;
         BubbleSort sort = new BubbleSort();
 
