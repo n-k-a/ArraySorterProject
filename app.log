@@ -22,3 +22,16 @@
 [%sp] 2021-10-04 12:56:01,070 My Application Logger setArraySize 
 [%sp] 2021-10-04 12:56:05,829 My Application Logger setArraySize 
 [%sp] 2021-10-04 12:58:46,269 My Application Logger setArraySize 
+[%sp] 2021-10-04 14:22:39,067 My Application Logger setArraySize 
+[%sp] 2021-10-04 14:24:13,732 My Application Logger sortSelect 
+[%sp] 2021-10-04 14:24:17,276 My Application Logger setArraySize 
+[%sp] 2021-10-04 14:37:35,657 My Application Logger sortSelect 
+[%sp] 2021-10-04 14:37:44,098 My Application Logger setArraySize 
+[%sp] 2021-10-04 15:12:49,332 My Application Logger sortSelect 
+[%sp] 2021-10-04 16:16:09,802 My Application Logger setArraySize 
+[%sp] 2021-10-04 16:27:45,859 My Application Logger setArraySize 
+[%sp] 2021-10-04 19:28:57,921 My Application Logger sortSelect Builder returned null, value inserted was: bj
+[%sp] 2021-10-04 19:29:01,639 My Application Logger sortSelect Builder returned null, value inserted was: jbjk
+[%sp] 2021-10-04 19:32:53,073 My Application Logger sortSelect Builder returned null, value inserted was: mn
+[%sp] 2021-10-04 19:33:01,312 My Application Logger sortSelect Builder returned null, value inserted was: BubbleSort
+[%sp] 2021-10-04 19:33:02,900 My Application Logger printArr Results of sort:[-1784130750, -138900408, 22863263, 1457651447, 1992627872] Sort time is6500. Sort Used isBubbleSort 

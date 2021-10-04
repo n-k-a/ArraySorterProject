@@ -4,8 +4,10 @@ import java.util.Random;
 
 public class SortModel {
     private int[] arr;
+    private int[] arrSecond;
     private  Sort undefinedSort;
     private Random rng =new Random();
+    private enum COMPARISONSIZE  {SINGLE, DOUBLE};
 
     public Sort getUndefinedSort() {
         return undefinedSort;
@@ -22,11 +24,19 @@ public class SortModel {
         this.arr = arr;
     }
 
+    public int[] getArrSecond() {
+        return arrSecond;
+    }
+
+    public void setArrSecond(int[] arrSecond) {
+        this.arrSecond = arrSecond;
+    }
 
     public void runSort(){
 
         undefinedSort.sortList(arr);
     }
+    //generates a new array using the given arrsize
     public void generateArr(int arrSize){
          arr = new int[arrSize];
 
@@ -35,6 +45,7 @@ public class SortModel {
             arr[i] = currentArr;
         }
     }
+    //method that prints out sort name, the sorted array and method time.
     public void printSort(){
 
         StringBuilder sb = new StringBuilder();
