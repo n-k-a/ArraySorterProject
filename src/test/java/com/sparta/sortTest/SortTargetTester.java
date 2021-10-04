@@ -40,12 +40,12 @@ public class SortTargetTester {
         assertTrue(Arrays.equals(testArr, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}));
     }
 
-    /*@Test
+    @Test
     public void testArrNull() {
-        int[] testArr = {};999
+        int[] testArr = null;
         BubbleSort sort = new BubbleSort();
 
-    }*/
+    }
     /* @Test
     public void testSortTypeNull() {
         int[] testArr = {};

@@ -23,17 +23,17 @@ public class SortModel {
     }
 
 
-    public void runSort(Sort undefinedSort, int[] arr){
-        this.arr = arr;
-        this.undefinedSort = undefinedSort;
+    public void runSort(){
+
         undefinedSort.sortList(arr);
     }
-    public int[] generateArr(int arrSize){
+    public void generateArr(int arrSize){
+         arr = new int[arrSize];
+
         for(int i = 0; i<arrSize; i++){
             int currentArr =  rng.nextInt();
             arr[i] = currentArr;
         }
-        return arr;
     }
     public void printSort(){
 
@@ -44,5 +44,4 @@ public class SortModel {
         System.out.println(sb.toString());
     }
 
-}
 }

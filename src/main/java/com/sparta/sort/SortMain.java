@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class SortMain {
 
+
     public static String printSort(int[] arr, Sort usedSort){
 
         StringBuilder sb = new StringBuilder();
@@ -38,6 +39,14 @@ public class SortMain {
         System.out.println(java.util.Arrays.toString(arr) + "Unsorted Array");
         undefinedSort.sortList(arr);
         System.out.println( printSort(arr, undefinedSort));
+    }
+    public void printSort(Sort undefinedSort){
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(undefinedSort.getStringArr());
+        sb.append(" Sort time is" + undefinedSort.methodTime() + ". Sort Used is");
+        sb.append(undefinedSort.sortName() +" ");
+        System.out.println(sb.toString());
     }
 
 
